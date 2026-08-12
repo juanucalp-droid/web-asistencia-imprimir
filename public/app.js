@@ -35,46 +35,101 @@ function renderLists() {
     return;
   }
 
-  elements.container.innerHTML = state.lists.map((list, index) => `
-    <article class="list-card">
+  // Agrupar las materias por día
+  const days = ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes'];
 
-      <input
-        type="checkbox"
-        id="list-${index}"
-        value="${escapeHtml(list.url)}"
-        aria-label="Seleccionar ${escapeHtml(list.name)}"
-      >
+  const grouped = {};
 
-      <label class="list-info" for="list-${index}">
-        <span class="list-name">
-          ${escapeHtml(list.name)}
-        </span>
-      </label>
-
-      <a
-        class="preview-link"
-        href="${escapeHtml(list.url)}"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Ver PDF ↗
-      </a>
-
-    </article>
-  `).join('');
-
-  document.querySelectorAll('input[type="checkbox"]').forEach((checkbox) => {
-    checkbox.addEventListener('change', () => {
-
-      if (checkbox.checked) {
-        state.selected.add(checkbox.value);
-      } else {
-        state.selected.delete(checkbox.value);
-      }
-
-      updateSelection();
-    });
+  days.forEach((day) => {
+    grouped[day] = [];
   });
+
+  state.lists.forEach((list) => {
+    const day = list.day || 'Sin día';
+
+    if (!grouped[day]) {
+      grouped[day] = [];
+    }
+
+    grouped[day].push(list);
+  });
+
+  // Crear la pantalla separada por días
+  elements.container.innerHTML = Object.keys(grouped)
+    .filter((day) => grouped[day].length > 0)
+    .map((day) => {
+
+      const listsHtml = grouped[day]
+        .map((list) => {
+
+          const index = state.lists.indexOf(list);
+
+          return `
+            <article class="list-card">
+
+              <input
+                type="checkbox"
+                id="list-${index}"
+                value="${escapeHtml(list.url)}"
+                aria-label="Seleccionar ${escapeHtml(list.name)}"
+              >
+
+              <label
+                class="list-info"
+                for="list-${index}"
+              >
+                <span class="list-name">
+                  ${escapeHtml(list.name)}
+                </span>
+              </label>
+
+              <a
+                class="preview-link"
+                href="${escapeHtml(list.url)}"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Ver PDF ↗
+              </a>
+
+            </article>
+          `;
+        })
+        .join('');
+
+      return `
+        <section class="day-section">
+
+          <h2 class="day-title">
+            ${escapeHtml(day)}
+          </h2>
+
+          <div class="day-lists">
+            ${listsHtml}
+          </div>
+
+        </section>
+      `;
+    })
+    .join('');
+
+  // Eventos de selección
+  document
+    .querySelectorAll('input[type="checkbox"]')
+    .forEach((checkbox) => {
+
+      checkbox.addEventListener('change', () => {
+
+        if (checkbox.checked) {
+          state.selected.add(checkbox.value);
+        } else {
+          state.selected.delete(checkbox.value);
+        }
+
+        updateSelection();
+      });
+
+    });
 
   updateSelection();
 }
@@ -108,7 +163,9 @@ function setStatus(message, progress, type = '') {
 
 async function loadLists() {
   try {
+
     const response = await fetch('/api/lists');
+
     const payload = await response.json();
 
     if (!response.ok) {
@@ -118,14 +175,20 @@ async function loadLists() {
     }
 
     state.lists = payload;
+
     renderLists();
 
   } catch (error) {
 
-    elements.container.setAttribute('aria-busy', 'false');
+    elements.container.setAttribute(
+      'aria-busy',
+      'false'
+    );
 
     elements.container.innerHTML =
-      `<div class="empty-state">${escapeHtml(error.message)}</div>`;
+      `<div class="empty-state">
+        ${escapeHtml(error.message)}
+      </div>`;
 
     setStatus(
       'No se pudieron cargar las listas.',
@@ -138,41 +201,53 @@ async function loadLists() {
 async function combinePdfs() {
 
   if (!state.selected.size) {
+
     setStatus(
       'Seleccione al menos una lista para continuar.',
       0,
       'error'
     );
+
     return;
   }
 
   elements.combine.disabled = true;
+
   elements.result.hidden = true;
 
-  setStatus('Descargando listas...', 12);
+  setStatus(
+    'Descargando listas...',
+    12
+  );
 
   try {
 
-    const response = await fetch('/api/combine', {
-      method: 'POST',
+    const response = await fetch(
+      '/api/combine',
+      {
+        method: 'POST',
 
-      headers: {
-        'Content-Type': 'application/json'
-      },
+        headers: {
+          'Content-Type': 'application/json'
+        },
 
-      body: JSON.stringify({
-        urls: state.lists
-          .filter((list) => state.selected.has(list.url))
-          .map((list) => list.url)
-      })
-    });
+        body: JSON.stringify({
+          urls: state.lists
+            .filter((list) =>
+              state.selected.has(list.url)
+            )
+            .map((list) => list.url)
+        })
+      }
+    );
 
     if (!response.ok) {
 
       const payload = await response.json();
 
       throw new Error(
-        payload.error || 'No se pudo generar el PDF.'
+        payload.error ||
+        'No se pudo generar el PDF.'
       );
     }
 
@@ -189,7 +264,8 @@ async function combinePdfs() {
       URL.revokeObjectURL(state.pdfUrl);
     }
 
-    state.pdfUrl = URL.createObjectURL(blob);
+    state.pdfUrl =
+      URL.createObjectURL(blob);
 
     setStatus(
       'PDF listo.',
@@ -199,7 +275,9 @@ async function combinePdfs() {
 
     elements.detail.textContent =
       `Se combinaron ${state.selected.size} ${
-        state.selected.size === 1 ? 'lista' : 'listas'
+        state.selected.size === 1
+          ? 'lista'
+          : 'listas'
       }.`;
 
     elements.result.hidden = false;
@@ -220,23 +298,29 @@ async function combinePdfs() {
 
 document
   .querySelector('#select-all')
-  .addEventListener('click', () => {
+  .addEventListener(
+    'click',
+    () => {
 
-    state.lists.forEach((list) => {
-      state.selected.add(list.url);
-    });
+      state.lists.forEach((list) => {
+        state.selected.add(list.url);
+      });
 
-    updateSelection();
-  });
+      updateSelection();
+    }
+  );
 
 document
   .querySelector('#deselect-all')
-  .addEventListener('click', () => {
+  .addEventListener(
+    'click',
+    () => {
 
-    state.selected.clear();
+      state.selected.clear();
 
-    updateSelection();
-  });
+      updateSelection();
+    }
+  );
 
 elements.combine.addEventListener(
   'click',
@@ -246,12 +330,15 @@ elements.combine.addEventListener(
 elements.open.addEventListener(
   'click',
   () => {
+
     if (state.pdfUrl) {
+
       window.open(
         state.pdfUrl,
         '_blank',
         'noopener'
       );
+
     }
   }
 );
@@ -259,12 +346,15 @@ elements.open.addEventListener(
 elements.print.addEventListener(
   'click',
   () => {
+
     if (state.pdfUrl) {
+
       window.open(
         state.pdfUrl,
         '_blank',
         'noopener'
       );
+
     }
   }
 );
