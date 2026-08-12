@@ -1,102 +1,224 @@
 [
   {
     "name": "Matemática I-LPLHS-1-N-2026",
+    "day": "Martes",
     "filename": "tmp97FC.tmp.pdf",
     "url": "https://noe.ucalp.edu.ar/noe/tmp/tmp97FC.tmp.pdf"
   },
   {
     "name": "Física II-LPLHS-3-N-2026",
+    "day": "Martes",
     "filename": "tmpA90E.tmp.pdf",
     "url": "https://noe.ucalp.edu.ar/noe/tmp/tmpA90E.tmp.pdf"
   },
   {
     "name": "Física II-LPIA-3-2026",
+    "day": "Martes",
     "filename": "tmpFD56.tmp.pdf",
     "url": "https://noe.ucalp.edu.ar/noe/tmp/tmpFD56.tmp.pdf"
   },
   {
     "name": "Orientación de Objetos II-LPLS-2-P-2026",
+    "day": "Martes",
     "filename": "tmp83DE.tmp.pdf",
     "url": "https://noe.ucalp.edu.ar/noe/tmp/tmp83DE.tmp.pdf"
   },
   {
     "name": "Biología II-LPIA-4-N-2026",
+    "day": "Martes",
     "filename": "tmpE95F.tmp.pdf",
     "url": "https://noe.ucalp.edu.ar/noe/tmp/tmpE95F.tmp.pdf"
   },
   {
     "name": "Matemática II-LPLHS-2-N-2026",
+    "day": "Martes",
     "filename": "tmp6EDB.tmp.pdf",
     "url": "https://noe.ucalp.edu.ar/noe/tmp/tmp6EDB.tmp.pdf"
   },
   {
     "name": "Química orgánica-LPIA-2-N-2026",
+    "day": "Martes",
     "filename": "tmpC872.tmp.pdf",
     "url": "https://noe.ucalp.edu.ar/noe/tmp/tmpC872.tmp.pdf"
   },
   {
     "name": "Matemática B2-LPIA-1-2026",
+    "day": "Martes",
     "filename": "tmp2952.tmp.pdf",
     "url": "https://noe.ucalp.edu.ar/noe/tmp/tmp2952.tmp.pdf"
   },
   {
     "name": "Toxicología-LPIA-5-2026",
+    "day": "Martes",
     "filename": "tmp81D1.tmp.pdf",
     "url": "https://noe.ucalp.edu.ar/noe/tmp/tmp81D1.tmp.pdf"
   },
   {
     "name": "Álgebra-LPLIS-1P-2026",
+    "day": "Martes",
     "filename": "tmpEABD.tmp.pdf",
     "url": "https://noe.ucalp.edu.ar/noe/tmp/tmpEABD.tmp.pdf"
   },
   {
     "name": "Algebra-LPLS-1P-2026",
+    "day": "Martes",
     "filename": "tmp47C2.tmp.pdf",
     "url": "https://noe.ucalp.edu.ar/noe/tmp/tmp47C2.tmp.pdf"
   },
   {
     "name": "Experiencias de Usuario-LPLS-4-2026",
+    "day": "Martes",
     "filename": "tmpB7A3.tmp.pdf",
     "url": "https://noe.ucalp.edu.ar/noe/tmp/tmpB7A3.tmp.pdf"
   },
   {
     "name": "Seguridad I-LPLHS-1-N-2026",
+    "day": "Martes",
     "filename": "tmp10C1.tmp.pdf",
     "url": "https://noe.ucalp.edu.ar/noe/tmp/tmp10C1.tmp.pdf"
   },
   {
     "name": "Microbiología-LPIA-3-2026",
+    "day": "Martes",
     "filename": "tmp7A0D.tmp.pdf",
     "url": "https://noe.ucalp.edu.ar/noe/tmp/tmp7A0D.tmp.pdf"
   },
   {
     "name": "Base de Datos II-LPLS-2-P-2026",
+    "day": "Martes",
     "filename": "tmpD5A2.tmp.pdf",
     "url": "https://noe.ucalp.edu.ar/noe/tmp/tmpD5A2.tmp.pdf"
   },
   {
     "name": "Medicina Laboral-LPLHS-3-N-2026",
+    "day": "Martes",
     "filename": "tmp430A.tmp.pdf",
     "url": "https://noe.ucalp.edu.ar/noe/tmp/tmp430A.tmp.pdf"
   },
   {
     "name": "Redes de Datos-LPLIS-3P-2026",
+    "day": "Martes",
     "filename": "tmp9E73.tmp.pdf",
     "url": "https://noe.ucalp.edu.ar/noe/tmp/tmp9E73.tmp.pdf"
   },
   {
     "name": "Matemática C-LPIA-2-N-2026",
+    "day": "Martes",
     "filename": "tmp10B8.tmp.pdf",
     "url": "https://noe.ucalp.edu.ar/noe/tmp/tmp10B8.tmp.pdf"
   },
   {
     "name": "Física I-LPLHS-2-N-2026",
+    "day": "Martes",
     "filename": "tmp7437.tmp.pdf",
     "url": "https://noe.ucalp.edu.ar/noe/tmp/tmp7437.tmp.pdf"
   },
   {
     "name": "Taller de integración II-LPIA-5-2026",
+    "day": "Martes",
     "filename": "tmpE6F2.tmp.pdf",
     "url": "https://noe.ucalp.edu.ar/noe/tmp/tmpE6F2.tmp.pdf"
+  },
+  {
+    "name": "Análisis Matemático",
+    "day": "Miércoles",
+    "filename": "tmp2BB3.tmp.pdf",
+    "url": "https://noe.ucalp.edu.ar/noe/tmp/tmp2BB3.tmp.pdf"
+  },
+  {
+    "name": "Lenguajes",
+    "day": "Miércoles",
+    "filename": "tmpE06E.tmp.pdf",
+    "url": "https://noe.ucalp.edu.ar/noe/tmp/tmpE06E.tmp.pdf"
+  },
+  {
+    "name": "Ingeniería de Software II",
+    "day": "Miércoles",
+    "filename": "tmp15FD.tmp.pdf",
+    "url": "https://noe.ucalp.edu.ar/noe/tmp/tmp15FD.tmp.pdf"
+  },
+  {
+    "name": "Programación Concurrente",
+    "day": "Miércoles",
+    "filename": "tmp8594.tmp.pdf",
+    "url": "https://noe.ucalp.edu.ar/noe/tmp/tmp8594.tmp.pdf"
+  },
+  {
+    "name": "Higiene I",
+    "day": "Miércoles",
+    "filename": "tmpECD1.tmp.pdf",
+    "url": "https://noe.ucalp.edu.ar/noe/tmp/tmpECD1.tmp.pdf"
+  },
+  {
+    "name": "Química Física",
+    "day": "Miércoles",
+    "filename": "tmp6310.tmp.pdf",
+    "url": "https://noe.ucalp.edu.ar/noe/tmp/tmp6310.tmp.pdf"
+  },
+  {
+    "name": "Física I",
+    "day": "Miércoles",
+    "filename": "tmp5C31.tmp.pdf",
+    "url": "https://noe.ucalp.edu.ar/noe/tmp/tmp5C31.tmp.pdf"
+  },
+  {
+    "name": "Higiene III",
+    "day": "Miércoles",
+    "filename": "tmp16D7.tmp.pdf",
+    "url": "https://noe.ucalp.edu.ar/noe/tmp/tmp16D7.tmp.pdf"
+  },
+  {
+    "name": "Seguridad III",
+    "day": "Miércoles",
+    "filename": "tmpB7FB.tmp.pdf",
+    "url": "https://noe.ucalp.edu.ar/noe/tmp/tmpB7FB.tmp.pdf"
+  },
+  {
+    "name": "Economía, Costos y Presupuestos",
+    "day": "Miércoles",
+    "filename": "tmp35BA.tmp.pdf",
+    "url": "https://noe.ucalp.edu.ar/noe/tmp/tmp35BA.tmp.pdf"
+  },
+  {
+    "name": "Seminario: Sistemas Integrados de Gestión",
+    "day": "Miércoles",
+    "filename": "tmpDC2C.tmp.pdf",
+    "url": "https://noe.ucalp.edu.ar/noe/tmp/tmpDC2C.tmp.pdf"
+  },
+  {
+    "name": "Matemática A1",
+    "day": "Miércoles",
+    "filename": "tmpE521.tmp.pdf",
+    "url": "https://noe.ucalp.edu.ar/noe/tmp/tmpE521.tmp.pdf"
+  },
+  {
+    "name": "Geología II",
+    "day": "Miércoles",
+    "filename": "tmp52D0.tmp.pdf",
+    "url": "https://noe.ucalp.edu.ar/noe/tmp/tmp52D0.tmp.pdf"
+  },
+  {
+    "name": "Química Física",
+    "day": "Miércoles",
+    "filename": "tmp7253.tmp.pdf",
+    "url": "https://noe.ucalp.edu.ar/noe/tmp/tmp7253.tmp.pdf"
+  },
+  {
+    "name": "Inglés II",
+    "day": "Miércoles",
+    "filename": "tmpDD04.tmp.pdf",
+    "url": "https://noe.ucalp.edu.ar/noe/tmp/tmpDD04.tmp.pdf"
+  },
+  {
+    "name": "Procesos Físico Químicos en IA",
+    "day": "Miércoles",
+    "filename": "tmp692A.tmp.pdf",
+    "url": "https://noe.ucalp.edu.ar/noe/tmp/tmp692A.tmp.pdf"
+  },
+  {
+    "name": "Evaluación del Impacto Ambiental",
+    "day": "Miércoles",
+    "filename": "tmpCDEE.tmp.pdf",
+    "url": "https://noe.ucalp.edu.ar/noe/tmp/tmpCDEE.tmp.pdf"
   }
 ]
