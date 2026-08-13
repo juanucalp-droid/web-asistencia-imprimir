@@ -1,224 +1,499 @@
 [
   {
-    "name": "Matemática I-LPLHS-1-N-2026",
+    "name": "Matemática I",
+    "code": "LPLHS-1-N",
     "day": "Martes",
+    "career": "Lic. en Higiene y Seguridad en el Trabajo",
+    "year": 1,
     "filename": "tmp97FC.tmp.pdf",
     "url": "https://noe.ucalp.edu.ar/noe/tmp/tmp97FC.tmp.pdf"
   },
   {
-    "name": "Física II-LPLHS-3-N-2026",
+    "name": "Física II",
+    "code": "LPLHS-3-N",
     "day": "Martes",
+    "career": "Lic. en Higiene y Seguridad en el Trabajo",
+    "year": 3,
     "filename": "tmpA90E.tmp.pdf",
     "url": "https://noe.ucalp.edu.ar/noe/tmp/tmpA90E.tmp.pdf"
   },
   {
-    "name": "Física II-LPIA-3-2026",
+    "name": "Física II",
+    "code": "LPIA-3",
     "day": "Martes",
+    "career": "Ingeniería Ambiental",
+    "year": 3,
     "filename": "tmpFD56.tmp.pdf",
     "url": "https://noe.ucalp.edu.ar/noe/tmp/tmpFD56.tmp.pdf"
   },
   {
-    "name": "Orientación de Objetos II-LPLS-2-P-2026",
+    "name": "Orientación de Objetos II",
+    "code": "LPLS-2-P",
     "day": "Martes",
+    "career": "Lic. en Sistemas",
+    "year": 2,
     "filename": "tmp83DE.tmp.pdf",
     "url": "https://noe.ucalp.edu.ar/noe/tmp/tmp83DE.tmp.pdf"
   },
   {
-    "name": "Biología II-LPIA-4-N-2026",
+    "name": "Biología II",
+    "code": "LPIA-4-N",
     "day": "Martes",
+    "career": "Ingeniería Ambiental",
+    "year": 4,
     "filename": "tmpE95F.tmp.pdf",
     "url": "https://noe.ucalp.edu.ar/noe/tmp/tmpE95F.tmp.pdf"
   },
   {
-    "name": "Matemática II-LPLHS-2-N-2026",
+    "name": "Matemática II",
+    "code": "LPLHS-2-N",
     "day": "Martes",
+    "career": "Lic. en Higiene y Seguridad en el Trabajo",
+    "year": 2,
     "filename": "tmp6EDB.tmp.pdf",
     "url": "https://noe.ucalp.edu.ar/noe/tmp/tmp6EDB.tmp.pdf"
   },
   {
-    "name": "Química orgánica-LPIA-2-N-2026",
+    "name": "Química Orgánica",
+    "code": "LPIA-2-N",
     "day": "Martes",
+    "career": "Ingeniería Ambiental",
+    "year": 2,
     "filename": "tmpC872.tmp.pdf",
     "url": "https://noe.ucalp.edu.ar/noe/tmp/tmpC872.tmp.pdf"
   },
   {
-    "name": "Matemática B2-LPIA-1-2026",
+    "name": "Matemática B2",
+    "code": "LPIA-1",
     "day": "Martes",
+    "career": "Ingeniería Ambiental",
+    "year": 1,
     "filename": "tmp2952.tmp.pdf",
     "url": "https://noe.ucalp.edu.ar/noe/tmp/tmp2952.tmp.pdf"
   },
   {
-    "name": "Toxicología-LPIA-5-2026",
+    "name": "Toxicología",
+    "code": "LPIA-5",
     "day": "Martes",
+    "career": "Ingeniería Ambiental",
+    "year": 5,
     "filename": "tmp81D1.tmp.pdf",
     "url": "https://noe.ucalp.edu.ar/noe/tmp/tmp81D1.tmp.pdf"
   },
   {
-    "name": "Álgebra-LPLIS-1P-2026",
+    "name": "Álgebra",
+    "code": "LPLIS-1P",
     "day": "Martes",
+    "career": "Lic. en Sistemas",
+    "year": 1,
     "filename": "tmpEABD.tmp.pdf",
     "url": "https://noe.ucalp.edu.ar/noe/tmp/tmpEABD.tmp.pdf"
   },
   {
-    "name": "Algebra-LPLS-1P-2026",
+    "name": "Álgebra",
+    "code": "LPLS-1P",
     "day": "Martes",
+    "career": "Lic. en Sistemas",
+    "year": 1,
     "filename": "tmp47C2.tmp.pdf",
     "url": "https://noe.ucalp.edu.ar/noe/tmp/tmp47C2.tmp.pdf"
   },
   {
-    "name": "Experiencias de Usuario-LPLS-4-2026",
+    "name": "Experiencias de Usuario",
+    "code": "LPLS-4",
     "day": "Martes",
+    "career": "Lic. en Sistemas",
+    "year": 4,
     "filename": "tmpB7A3.tmp.pdf",
     "url": "https://noe.ucalp.edu.ar/noe/tmp/tmpB7A3.tmp.pdf"
   },
   {
-    "name": "Seguridad I-LPLHS-1-N-2026",
+    "name": "Seguridad I",
+    "code": "LPLHS-1-N",
     "day": "Martes",
+    "career": "Lic. en Higiene y Seguridad en el Trabajo",
+    "year": 1,
     "filename": "tmp10C1.tmp.pdf",
     "url": "https://noe.ucalp.edu.ar/noe/tmp/tmp10C1.tmp.pdf"
   },
   {
-    "name": "Microbiología-LPIA-3-2026",
+    "name": "Microbiología",
+    "code": "LPIA-3",
     "day": "Martes",
+    "career": "Ingeniería Ambiental",
+    "year": 3,
     "filename": "tmp7A0D.tmp.pdf",
     "url": "https://noe.ucalp.edu.ar/noe/tmp/tmp7A0D.tmp.pdf"
   },
   {
-    "name": "Base de Datos II-LPLS-2-P-2026",
+    "name": "Base de Datos II",
+    "code": "LPLS-2-P",
     "day": "Martes",
+    "career": "Lic. en Sistemas",
+    "year": 2,
     "filename": "tmpD5A2.tmp.pdf",
     "url": "https://noe.ucalp.edu.ar/noe/tmp/tmpD5A2.tmp.pdf"
   },
   {
-    "name": "Medicina Laboral-LPLHS-3-N-2026",
+    "name": "Medicina Laboral",
+    "code": "LPLHS-3-N",
     "day": "Martes",
+    "career": "Lic. en Higiene y Seguridad en el Trabajo",
+    "year": 3,
     "filename": "tmp430A.tmp.pdf",
     "url": "https://noe.ucalp.edu.ar/noe/tmp/tmp430A.tmp.pdf"
   },
   {
-    "name": "Redes de Datos-LPLIS-3P-2026",
+    "name": "Redes de Datos",
+    "code": "LPLIS-3P",
     "day": "Martes",
+    "career": "Lic. en Sistemas",
+    "year": 3,
     "filename": "tmp9E73.tmp.pdf",
     "url": "https://noe.ucalp.edu.ar/noe/tmp/tmp9E73.tmp.pdf"
   },
   {
-    "name": "Matemática C-LPIA-2-N-2026",
+    "name": "Matemática C",
+    "code": "LPIA-2-N",
     "day": "Martes",
+    "career": "Ingeniería Ambiental",
+    "year": 2,
     "filename": "tmp10B8.tmp.pdf",
     "url": "https://noe.ucalp.edu.ar/noe/tmp/tmp10B8.tmp.pdf"
   },
   {
-    "name": "Física I-LPLHS-2-N-2026",
+    "name": "Física I",
+    "code": "LPLHS-2-N",
     "day": "Martes",
+    "career": "Lic. en Higiene y Seguridad en el Trabajo",
+    "year": 2,
     "filename": "tmp7437.tmp.pdf",
     "url": "https://noe.ucalp.edu.ar/noe/tmp/tmp7437.tmp.pdf"
   },
   {
-    "name": "Taller de integración II-LPIA-5-2026",
+    "name": "Taller de Integración II",
+    "code": "LPIA-5",
     "day": "Martes",
+    "career": "Ingeniería Ambiental",
+    "year": 5,
     "filename": "tmpE6F2.tmp.pdf",
     "url": "https://noe.ucalp.edu.ar/noe/tmp/tmpE6F2.tmp.pdf"
   },
+
   {
     "name": "Análisis Matemático",
+    "code": "LPLIS-1P",
     "day": "Miércoles",
+    "career": "Lic. en Sistemas",
+    "year": 1,
     "filename": "tmp2BB3.tmp.pdf",
     "url": "https://noe.ucalp.edu.ar/noe/tmp/tmp2BB3.tmp.pdf"
   },
   {
     "name": "Lenguajes",
+    "code": "LPLIS-1P",
     "day": "Miércoles",
+    "career": "Lic. en Sistemas",
+    "year": 1,
     "filename": "tmpE06E.tmp.pdf",
     "url": "https://noe.ucalp.edu.ar/noe/tmp/tmpE06E.tmp.pdf"
   },
   {
     "name": "Ingeniería de Software II",
+    "code": "LPLS-4",
     "day": "Miércoles",
+    "career": "Lic. en Sistemas",
+    "year": 4,
     "filename": "tmp15FD.tmp.pdf",
     "url": "https://noe.ucalp.edu.ar/noe/tmp/tmp15FD.tmp.pdf"
   },
   {
     "name": "Programación Concurrente",
+    "code": "LPLIS-3P",
     "day": "Miércoles",
+    "career": "Lic. en Sistemas",
+    "year": 3,
     "filename": "tmp8594.tmp.pdf",
     "url": "https://noe.ucalp.edu.ar/noe/tmp/tmp8594.tmp.pdf"
   },
   {
     "name": "Higiene I",
+    "code": "LPLHS-1-N",
     "day": "Miércoles",
+    "career": "Lic. en Higiene y Seguridad en el Trabajo",
+    "year": 1,
     "filename": "tmpECD1.tmp.pdf",
     "url": "https://noe.ucalp.edu.ar/noe/tmp/tmpECD1.tmp.pdf"
   },
   {
     "name": "Química Física",
+    "code": "LPIA-2-N",
     "day": "Miércoles",
+    "career": "Ingeniería Ambiental",
+    "year": 2,
     "filename": "tmp6310.tmp.pdf",
     "url": "https://noe.ucalp.edu.ar/noe/tmp/tmp6310.tmp.pdf"
   },
   {
     "name": "Física I",
+    "code": "LPLHS-2-N",
     "day": "Miércoles",
+    "career": "Lic. en Higiene y Seguridad en el Trabajo",
+    "year": 2,
     "filename": "tmp5C31.tmp.pdf",
     "url": "https://noe.ucalp.edu.ar/noe/tmp/tmp5C31.tmp.pdf"
   },
   {
     "name": "Higiene III",
+    "code": "LPLHS-3-N",
     "day": "Miércoles",
+    "career": "Lic. en Higiene y Seguridad en el Trabajo",
+    "year": 3,
     "filename": "tmp16D7.tmp.pdf",
     "url": "https://noe.ucalp.edu.ar/noe/tmp/tmp16D7.tmp.pdf"
   },
   {
     "name": "Seguridad III",
+    "code": "LPLHS-3-N",
     "day": "Miércoles",
+    "career": "Lic. en Higiene y Seguridad en el Trabajo",
+    "year": 3,
     "filename": "tmpB7FB.tmp.pdf",
     "url": "https://noe.ucalp.edu.ar/noe/tmp/tmpB7FB.tmp.pdf"
   },
   {
     "name": "Economía, Costos y Presupuestos",
+    "code": "LPLHS-3-N",
     "day": "Miércoles",
+    "career": "Lic. en Higiene y Seguridad en el Trabajo",
+    "year": 3,
     "filename": "tmp35BA.tmp.pdf",
     "url": "https://noe.ucalp.edu.ar/noe/tmp/tmp35BA.tmp.pdf"
   },
   {
     "name": "Seminario: Sistemas Integrados de Gestión",
+    "code": "LPLHS-4-N",
     "day": "Miércoles",
+    "career": "Lic. en Higiene y Seguridad en el Trabajo",
+    "year": 4,
     "filename": "tmpDC2C.tmp.pdf",
     "url": "https://noe.ucalp.edu.ar/noe/tmp/tmpDC2C.tmp.pdf"
   },
   {
     "name": "Matemática A1",
+    "code": "LPIA-1",
     "day": "Miércoles",
+    "career": "Ingeniería Ambiental",
+    "year": 1,
     "filename": "tmpE521.tmp.pdf",
     "url": "https://noe.ucalp.edu.ar/noe/tmp/tmpE521.tmp.pdf"
   },
   {
     "name": "Geología II",
+    "code": "LPIA-2-N",
     "day": "Miércoles",
+    "career": "Ingeniería Ambiental",
+    "year": 2,
     "filename": "tmp52D0.tmp.pdf",
     "url": "https://noe.ucalp.edu.ar/noe/tmp/tmp52D0.tmp.pdf"
   },
   {
     "name": "Química Física",
+    "code": "LPIA-2-N",
     "day": "Miércoles",
+    "career": "Ingeniería Ambiental",
+    "year": 2,
     "filename": "tmp7253.tmp.pdf",
     "url": "https://noe.ucalp.edu.ar/noe/tmp/tmp7253.tmp.pdf"
   },
   {
     "name": "Inglés II",
+    "code": "LPLIS-2P",
     "day": "Miércoles",
+    "career": "Lic. en Sistemas",
+    "year": 2,
     "filename": "tmpDD04.tmp.pdf",
     "url": "https://noe.ucalp.edu.ar/noe/tmp/tmpDD04.tmp.pdf"
   },
   {
     "name": "Procesos Físico Químicos en IA",
+    "code": "LPIA-3",
     "day": "Miércoles",
+    "career": "Ingeniería Ambiental",
+    "year": 3,
     "filename": "tmp692A.tmp.pdf",
     "url": "https://noe.ucalp.edu.ar/noe/tmp/tmp692A.tmp.pdf"
   },
   {
     "name": "Evaluación del Impacto Ambiental",
+    "code": "LPIA-5",
     "day": "Miércoles",
+    "career": "Ingeniería Ambiental",
+    "year": 5,
     "filename": "tmpCDEE.tmp.pdf",
     "url": "https://noe.ucalp.edu.ar/noe/tmp/tmpCDEE.tmp.pdf"
+  },
+
+  {
+    "name": "Filosofía I",
+    "code": "LPLIS-1P",
+    "day": "Jueves",
+    "career": "Lic. en Sistemas",
+    "year": 1,
+    "filename": "tmp618D.tmp.pdf",
+    "url": "https://noe.ucalp.edu.ar/noe/tmp/tmp618D.tmp.pdf"
+  },
+  {
+    "name": "Inglés I",
+    "code": "LPLS-1-SP",
+    "day": "Jueves",
+    "career": "Lic. en Sistemas",
+    "year": 1,
+    "filename": "tmpA4B0.tmp.pdf",
+    "url": "https://noe.ucalp.edu.ar/noe/tmp/tmpA4B0.tmp.pdf"
+  },
+  {
+    "name": "Teología I",
+    "code": "LPLS-2-P",
+    "day": "Jueves",
+    "career": "Lic. en Sistemas",
+    "year": 2,
+    "filename": "tmp8C79.tmp.pdf",
+    "url": "https://noe.ucalp.edu.ar/noe/tmp/tmp8C79.tmp.pdf"
+  },
+  {
+    "name": "Base de Datos II",
+    "code": "LPLS-2-P",
+    "day": "Jueves",
+    "career": "Lic. en Sistemas",
+    "year": 2,
+    "filename": "tmp7438.tmp.pdf",
+    "url": "https://noe.ucalp.edu.ar/noe/tmp/tmp7438.tmp.pdf"
+  },
+  {
+    "name": "Programación Concurrente",
+    "code": "LPLIS-3P",
+    "day": "Jueves",
+    "career": "Lic. en Sistemas",
+    "year": 3,
+    "filename": "tmpD40E.tmp.pdf",
+    "url": "https://noe.ucalp.edu.ar/noe/tmp/tmpD40E.tmp.pdf"
+  },
+  {
+    "name": "Calidad de Software",
+    "code": "LPLS-4",
+    "day": "Jueves",
+    "career": "Lic. en Sistemas",
+    "year": 4,
+    "filename": "tmp9D48.tmp.pdf",
+    "url": "https://noe.ucalp.edu.ar/noe/tmp/tmp9D48.tmp.pdf"
+  },
+  {
+    "name": "Gestión de RRHH",
+    "code": "LPLS-4",
+    "day": "Jueves",
+    "career": "Lic. en Sistemas",
+    "year": 4,
+    "filename": "tmp5603.tmp.pdf",
+    "url": "https://noe.ucalp.edu.ar/noe/tmp/tmp5603.tmp.pdf"
+  },
+  {
+    "name": "Anatomía y Fisiología del Trabajo",
+    "code": "LPLHS-1-N",
+    "day": "Jueves",
+    "career": "Lic. en Higiene y Seguridad en el Trabajo",
+    "year": 1,
+    "filename": "tmpC9A6.tmp.pdf",
+    "url": "https://noe.ucalp.edu.ar/noe/tmp/tmpC9A6.tmp.pdf"
+  },
+  {
+    "name": "Educación para la Seguridad y Capacitación del Personal",
+    "code": "LPLHS-1-N",
+    "day": "Jueves",
+    "career": "Lic. en Higiene y Seguridad en el Trabajo",
+    "year": 1,
+    "filename": "tmp7F63.tmp.pdf",
+    "url": "https://noe.ucalp.edu.ar/noe/tmp/tmp7F63.tmp.pdf"
+  },
+  {
+    "name": "Higiene II",
+    "code": "LPLHS-2-N",
+    "day": "Jueves",
+    "career": "Lic. en Higiene y Seguridad en el Trabajo",
+    "year": 2,
+    "filename": "tmp2E1F.tmp.pdf",
+    "url": "https://noe.ucalp.edu.ar/noe/tmp/tmp2E1F.tmp.pdf"
+  },
+  {
+    "name": "Seminario de Instalaciones contra Incendios y Brigadas",
+    "code": "LPLHS-4-N",
+    "day": "Jueves",
+    "career": "Lic. en Higiene y Seguridad en el Trabajo",
+    "year": 4,
+    "filename": "tmp1750.tmp.pdf",
+    "url": "https://noe.ucalp.edu.ar/noe/tmp/tmp1750.tmp.pdf"
+  },
+  {
+    "name": "Química Inorgánica",
+    "code": "LPIA-1",
+    "day": "Jueves",
+    "career": "Ingeniería Ambiental",
+    "year": 1,
+    "filename": "tmp6C7A.tmp.pdf",
+    "url": "https://noe.ucalp.edu.ar/noe/tmp/tmp6C7A.tmp.pdf"
+  },
+  {
+    "name": "Probabilidades y Estadísticas",
+    "code": "LPIA-2-N",
+    "day": "Jueves",
+    "career": "Ingeniería Ambiental",
+    "year": 2,
+    "filename": "tmp9727.tmp.pdf",
+    "url": "https://noe.ucalp.edu.ar/noe/tmp/tmp9727.tmp.pdf"
+  },
+  {
+    "name": "Filosofía I",
+    "code": "LPIA-2-N",
+    "day": "Jueves",
+    "career": "Ingeniería Ambiental",
+    "year": 2,
+    "filename": "tmp64DE.tmp.pdf",
+    "url": "https://noe.ucalp.edu.ar/noe/tmp/tmp64DE.tmp.pdf"
+  },
+  {
+    "name": "Biología I",
+    "code": "LPIA-3",
+    "day": "Jueves",
+    "career": "Ingeniería Ambiental",
+    "year": 3,
+    "filename": "tmp4FD5.tmp.pdf",
+    "url": "https://noe.ucalp.edu.ar/noe/tmp/tmp4FD5.tmp.pdf"
+  },
+  {
+    "name": "Clima. Tecnologías Aplicadas al Medio Gaseoso",
+    "code": "LPIA-4-N",
+    "day": "Jueves",
+    "career": "Ingeniería Ambiental",
+    "year": 4,
+    "filename": "tmpB971.tmp.pdf",
+    "url": "https://noe.ucalp.edu.ar/noe/tmp/tmpB971.tmp.pdf"
+  },
+  {
+    "name": "Residuos Sólidos y Tecnologías Aplicadas para su Tratamiento",
+    "code": "LPIA-5",
+    "day": "Jueves",
+    "career": "Ingeniería Ambiental",
+    "year": 5,
+    "filename": "tmp79E9.tmp.pdf",
+    "url": "https://noe.ucalp.edu.ar/noe/tmp/tmp79E9.tmp.pdf"
+  },
+  {
+    "name": "Taller de Integración II",
+    "code": "LPIA-5",
+    "day": "Jueves",
+    "career": "Ingeniería Ambiental",
+    "year": 5,
+    "filename": "tmpCE87.tmp.pdf",
+    "url": "https://noe.ucalp.edu.ar/noe/tmp/tmpCE87.tmp.pdf"
   }
 ]
