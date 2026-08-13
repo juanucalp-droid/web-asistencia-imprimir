@@ -18,70 +18,388 @@ const elements = {
 };
 
 
-// =====================================================
-// ACTUALIZAR SELECCIÓN
-// =====================================================
+/* =========================================================
+   DATOS COMPLEMENTARIOS
+   ========================================================= */
+
+/*
+  Para los datos que ya vienen con el código de carrera
+  podemos determinar automáticamente la carrera y el año.
+
+  LPLS / LPLIS  = Lic. en Sistemas
+  LPLHS          = Lic. en Higiene y Seguridad
+  LPIA           = Ingeniería Ambiental
+*/
+
+function getCareerFromName(name) {
+
+  const text = String(name).toUpperCase();
+
+  if (
+    text.includes('LPLS') ||
+    text.includes('LPLIS')
+  ) {
+    return 'LIC. EN SISTEMAS';
+  }
+
+  if (text.includes('LPLHS')) {
+    return 'LIC. EN HIGIENE Y SEGURIDAD EN EL TRABAJO';
+  }
+
+  if (text.includes('LPIA')) {
+    return 'INGENIERÍA AMBIENTAL';
+  }
+
+  return null;
+}
+
+
+function getYearFromName(name) {
+
+  const match = String(name).match(
+    /-(\d+)(?:-[A-Z]+)?(?:-\d{4})?$/
+  );
+
+  if (match) {
+    return `${match[1]}° AÑO`;
+  }
+
+  return null;
+}
+
+
+/*
+  Materias de MIÉRCOLES que no tenían código de carrera
+  en la información original.
+*/
+
+const wednesdayData = {
+
+  'Análisis Matemático': {
+    career: 'LIC. EN SISTEMAS',
+    year: '1° AÑO'
+  },
+
+  'Lenguajes': {
+    career: 'LIC. EN SISTEMAS',
+    year: '2° AÑO'
+  },
+
+  'Ingeniería de Software II': {
+    career: 'LIC. EN SISTEMAS',
+    year: '4° AÑO'
+  },
+
+  'Programación Concurrente': {
+    career: 'LIC. EN SISTEMAS',
+    year: '3° AÑO'
+  },
+
+  'Higiene I': {
+    career: 'LIC. EN HIGIENE Y SEGURIDAD EN EL TRABAJO',
+    year: '1° AÑO'
+  },
+
+  'Física I': {
+    career: 'LIC. EN HIGIENE Y SEGURIDAD EN EL TRABAJO',
+    year: '2° AÑO'
+  },
+
+  'Higiene III': {
+    career: 'LIC. EN HIGIENE Y SEGURIDAD EN EL TRABAJO',
+    year: '3° AÑO'
+  },
+
+  'Seguridad III': {
+    career: 'LIC. EN HIGIENE Y SEGURIDAD EN EL TRABAJO',
+    year: '3° AÑO'
+  },
+
+  'Economía, Costos y Presupuestos': {
+    career: 'LIC. EN HIGIENE Y SEGURIDAD EN EL TRABAJO',
+    year: '4° AÑO'
+  },
+
+  'Seminario: Sistemas Integrados de Gestión': {
+    career: 'LIC. EN HIGIENE Y SEGURIDAD EN EL TRABAJO',
+    year: '4° AÑO'
+  },
+
+  'Matemática A1': {
+    career: 'INGENIERÍA AMBIENTAL',
+    year: '1° AÑO'
+  },
+
+  'Geología II': {
+    career: 'INGENIERÍA AMBIENTAL',
+    year: '2° AÑO'
+  },
+
+  'Química Física': {
+    career: 'INGENIERÍA AMBIENTAL',
+    year: '2° AÑO'
+  },
+
+  'Inglés II': {
+    career: 'INGENIERÍA AMBIENTAL',
+    year: '2° AÑO'
+  },
+
+  'Procesos Físico Químicos en IA': {
+    career: 'INGENIERÍA AMBIENTAL',
+    year: '3° AÑO'
+  },
+
+  'Evaluación del Impacto Ambiental': {
+    career: 'INGENIERÍA AMBIENTAL',
+    year: '5° AÑO'
+  }
+};
+
+
+/* =========================================================
+   DATOS DE JUEVES
+   ========================================================= */
+
+const thursdayData = {
+
+  'Filosofía I': {
+    career: 'LIC. EN SISTEMAS',
+    year: '1° AÑO'
+  },
+
+  'Inglés I': {
+    career: 'LIC. EN SISTEMAS',
+    year: '1° AÑO'
+  },
+
+  'Teología I': {
+    career: 'LIC. EN SISTEMAS',
+    year: '2° AÑO'
+  },
+
+  'Base de Datos II': {
+    career: 'LIC. EN SISTEMAS',
+    year: '2° AÑO'
+  },
+
+  'Programación Concurrente': {
+    career: 'LIC. EN SISTEMAS',
+    year: '3° AÑO'
+  },
+
+  'Calidad de Software': {
+    career: 'LIC. EN SISTEMAS',
+    year: '4° AÑO'
+  },
+
+  'Gestión de RRHH': {
+    career: 'LIC. EN SISTEMAS',
+    year: '4° AÑO'
+  },
+
+  'Anatomía y Fisiología del Trabajo': {
+    career: 'LIC. EN HIGIENE Y SEGURIDAD EN EL TRABAJO',
+    year: '1° AÑO'
+  },
+
+  'Educ. Seguridad y Cap. del Personal': {
+    career: 'LIC. EN HIGIENE Y SEGURIDAD EN EL TRABAJO',
+    year: '1° AÑO'
+  },
+
+  'Higiene II': {
+    career: 'LIC. EN HIGIENE Y SEGURIDAD EN EL TRABAJO',
+    year: '2° AÑO'
+  },
+
+  'Seminario de Inst. contra Incendios y Brigadas': {
+    career: 'LIC. EN HIGIENE Y SEGURIDAD EN EL TRABAJO',
+    year: '4° AÑO'
+  },
+
+  'Química inorgánica': {
+    career: 'INGENIERÍA AMBIENTAL',
+    year: '1° AÑO'
+  },
+
+  'Probabilidades y estadísticas': {
+    career: 'INGENIERÍA AMBIENTAL',
+    year: '2° AÑO'
+  },
+
+  'Filosofía I - LPIA-2-N': {
+    career: 'INGENIERÍA AMBIENTAL',
+    year: '2° AÑO'
+  },
+
+  'Biología I': {
+    career: 'INGENIERÍA AMBIENTAL',
+    year: '3° AÑO'
+  },
+
+  'Clima. Tec. Aplicadas al Medio Gaseoso': {
+    career: 'INGENIERÍA AMBIENTAL',
+    year: '4° AÑO'
+  },
+
+  'Residuos sólidos y tec. aplicadas para su tratamiento': {
+    career: 'INGENIERÍA AMBIENTAL',
+    year: '5° AÑO'
+  },
+
+  'Taller de integración II': {
+    career: 'INGENIERÍA AMBIENTAL',
+    year: '5° AÑO'
+  }
+};
+
+
+/* =========================================================
+   NORMALIZACIÓN
+   ========================================================= */
+
+function normalizeList(list) {
+
+  const name = String(list.name || '').trim();
+  const day = String(list.day || '').trim();
+
+  let career = list.career || null;
+  let year = list.year || null;
+
+  /*
+    Primero intentamos utilizar los datos enviados
+    por el servidor.
+  */
+
+  if (!career) {
+    career = getCareerFromName(name);
+  }
+
+  if (!year) {
+    year = getYearFromName(name);
+  }
+
+  /*
+    Miércoles
+  */
+
+  if (
+    day.toLowerCase() === 'miércoles' &&
+    wednesdayData[name]
+  ) {
+
+    career = wednesdayData[name].career;
+    year = wednesdayData[name].year;
+  }
+
+
+  /*
+    Jueves
+  */
+
+  if (
+    day.toLowerCase() === 'jueves' &&
+    thursdayData[name]
+  ) {
+
+    career = thursdayData[name].career;
+    year = thursdayData[name].year;
+  }
+
+
+  /*
+    Casos donde el nombre de la materia contiene
+    código después del nombre.
+  */
+
+  if (!career) {
+    career = 'OTRAS CÁTEDRAS';
+  }
+
+  if (!year) {
+    year = 'AÑO NO INDICADO';
+  }
+
+  return {
+    ...list,
+    name,
+    day,
+    career,
+    year
+  };
+}
+
+
+/* =========================================================
+   SELECCIÓN
+   ========================================================= */
 
 function updateSelection() {
 
   elements.count.textContent = state.selected.size;
 
-  elements.count.nextElementSibling.textContent =
-    state.selected.size === 1
-      ? 'lista seleccionada'
-      : 'listas seleccionadas';
+  const label = elements.count.nextElementSibling;
+
+  if (label) {
+
+    label.textContent =
+      state.selected.size === 1
+        ? 'lista seleccionada'
+        : 'listas seleccionadas';
+  }
 
 
-  // Actualizar checkboxes individuales
   document
     .querySelectorAll('.list-checkbox')
     .forEach((checkbox) => {
 
       checkbox.checked =
         state.selected.has(checkbox.value);
-
     });
 
 
-  // Actualizar checkboxes de días
+  /*
+    Actualizar checkbox de cada día
+  */
+
   document
     .querySelectorAll('.day-checkbox')
     .forEach((dayCheckbox) => {
 
       const day = dayCheckbox.dataset.day;
 
-      const dayLists = state.lists.filter(
-        (list) => (list.day || 'Sin día') === day
-      );
+      const dayLists =
+        state.lists.filter(
+          list => list.day === day
+        );
 
-      const allSelected =
+      const selectedCount =
+        dayLists.filter(
+          list => state.selected.has(list.url)
+        ).length;
+
+      dayCheckbox.checked =
         dayLists.length > 0 &&
-        dayLists.every(
-          (list) => state.selected.has(list.url)
-        );
-
-      const someSelected =
-        dayLists.some(
-          (list) => state.selected.has(list.url)
-        );
-
-      dayCheckbox.checked = allSelected;
+        selectedCount === dayLists.length;
 
       dayCheckbox.indeterminate =
-        someSelected && !allSelected;
+        selectedCount > 0 &&
+        selectedCount < dayLists.length;
     });
 }
 
 
-// =====================================================
-// SELECCIONAR / DESELECCIONAR UN DÍA
-// =====================================================
+/* =========================================================
+   SELECCIONAR / DESELECCIONAR DÍA
+   ========================================================= */
 
 function toggleDay(day, checked) {
 
-  const dayLists = state.lists.filter(
-    (list) => (list.day || 'Sin día') === day
-  );
+  const dayLists =
+    state.lists.filter(
+      list => list.day === day
+    );
 
   dayLists.forEach((list) => {
 
@@ -90,16 +408,15 @@ function toggleDay(day, checked) {
     } else {
       state.selected.delete(list.url);
     }
-
   });
 
   updateSelection();
 }
 
 
-// =====================================================
-// MOSTRAR LAS LISTAS
-// =====================================================
+/* =========================================================
+   RENDERIZAR
+   ========================================================= */
 
 function renderLists() {
 
@@ -118,140 +435,164 @@ function renderLists() {
   }
 
 
-  // Agrupar por día
-  const groupedByDay = {};
+  /*
+    Agrupar primero por día
+  */
 
-  state.lists.forEach((list) => {
-
-    const day = list.day || 'Sin día';
-
-    if (!groupedByDay[day]) {
-      groupedByDay[day] = [];
-    }
-
-    groupedByDay[day].push(list);
-
-  });
-
-
-  // Orden de los días
-  const dayOrder = [
+  const days = [
     'Lunes',
     'Martes',
     'Miércoles',
     'Jueves',
-    'Viernes',
-    'Sábado',
-    'Domingo',
-    'Sin día'
+    'Viernes'
   ];
 
 
-  const orderedDays = Object.keys(groupedByDay).sort(
-    (a, b) => {
+  let html = '';
 
-      const indexA = dayOrder.indexOf(a);
-      const indexB = dayOrder.indexOf(b);
 
-      return (
-        (indexA === -1 ? 999 : indexA) -
-        (indexB === -1 ? 999 : indexB)
+  days.forEach((day) => {
+
+    const dayLists =
+      state.lists.filter(
+        list => list.day === day
       );
 
+
+    if (!dayLists.length) {
+      return;
     }
-  );
 
 
-  elements.container.innerHTML =
-    orderedDays.map((day) => {
+    /*
+      Cabecera del día
+    */
 
-      const lists = groupedByDay[day];
+    html += `
 
+      <section class="day-section">
 
-      return `
+        <div class="day-header">
 
-        <!-- ============================= -->
-        <!-- DÍA -->
-        <!-- ============================= -->
-
-        <section class="day-section">
-
-          <div class="day-header">
+          <label class="day-title">
 
             <input
               type="checkbox"
               class="day-checkbox"
-              id="day-${escapeHtml(day)}"
               data-day="${escapeHtml(day)}"
-              aria-label="Seleccionar ${escapeHtml(day)}"
             >
 
-            <label
-              class="day-title"
-              for="day-${escapeHtml(day)}"
-            >
-              ${escapeHtml(day)}
-            </label>
+            <span>${escapeHtml(day.toUpperCase())}</span>
 
+          </label>
+
+        </div>
+
+    `;
+
+
+    /*
+      Agrupar por carrera
+    */
+
+    const careers = [];
+
+    dayLists.forEach((list) => {
+
+      if (!careers.includes(list.career)) {
+        careers.push(list.career);
+      }
+
+    });
+
+
+    careers.forEach((career) => {
+
+      const careerLists =
+        dayLists.filter(
+          list => list.career === career
+        );
+
+
+      html += `
+
+        <div class="career-section">
+
+          <div class="career-title">
+            ${escapeHtml(career)}
           </div>
-
-
-          <!-- ============================= -->
-          <!-- CÁTEDRAS -->
-          <!-- ============================= -->
-
-          <div class="day-lists">
-
-            ${lists.map((list, index) => `
-
-              <article class="list-card">
-
-                <input
-                  type="checkbox"
-                  class="list-checkbox"
-                  id="list-${escapeHtml(day)}-${index}"
-                  value="${escapeHtml(list.url)}"
-                  aria-label="Seleccionar ${escapeHtml(list.name)}"
-                >
-
-
-                <label
-                  class="list-info"
-                  for="list-${escapeHtml(day)}-${index}"
-                >
-
-                  <span class="list-name">
-                    ${escapeHtml(list.name)}
-                  </span>
-
-                </label>
-
-
-                <a
-                  class="preview-link"
-                  href="${escapeHtml(list.url)}"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Ver PDF ↗
-                </a>
-
-              </article>
-
-            `).join('')}
-
-          </div>
-
-        </section>
 
       `;
 
-    }).join('');
+
+      careerLists.forEach((list, index) => {
+
+        const globalIndex =
+          state.lists.indexOf(list);
 
 
-  // =====================================================
-  // EVENTOS DE LAS CÁTEDRAS
-  // =====================================================
+        html += `
+
+          <article class="list-card">
+
+            <input
+              type="checkbox"
+              class="list-checkbox"
+              id="list-${globalIndex}"
+              value="${escapeHtml(list.url)}"
+              aria-label="Seleccionar ${escapeHtml(list.name)}"
+            >
+
+            <label
+              class="list-info"
+              for="list-${globalIndex}"
+            >
+
+              <span class="list-name">
+                ${escapeHtml(cleanSubjectName(list.name))}
+              </span>
+
+              <span class="list-year">
+                ${escapeHtml(list.year)}
+              </span>
+
+            </label>
+
+            <a
+              class="preview-link"
+              href="${escapeHtml(list.url)}"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Ver PDF ↗
+            </a>
+
+          </article>
+
+        `;
+      });
+
+
+      html += `
+        </div>
+      `;
+
+    });
+
+
+    html += `
+      </section>
+    `;
+
+  });
+
+
+  elements.container.innerHTML = html;
+
+
+  /*
+    Eventos de las cátedras
+  */
 
   document
     .querySelectorAll('.list-checkbox')
@@ -272,20 +613,17 @@ function renderLists() {
             state.selected.delete(
               checkbox.value
             );
-
           }
 
           updateSelection();
-
         }
       );
-
     });
 
 
-  // =====================================================
-  // EVENTOS DE LOS DÍAS
-  // =====================================================
+  /*
+    Eventos de los días
+  */
 
   document
     .querySelectorAll('.day-checkbox')
@@ -299,10 +637,8 @@ function renderLists() {
             checkbox.dataset.day,
             checkbox.checked
           );
-
         }
       );
-
     });
 
 
@@ -310,9 +646,25 @@ function renderLists() {
 }
 
 
-// =====================================================
-// ESCAPAR HTML
-// =====================================================
+/* =========================================================
+   LIMPIAR NOMBRE
+   ========================================================= */
+
+function cleanSubjectName(name) {
+
+  return String(name)
+    .replace(/-LPLIS-\d+P?/i, '')
+    .replace(/-LPLS-\d+(?:-P|-SP)?/i, '')
+    .replace(/-LPLHS-\d+-[A-Z]+/i, '')
+    .replace(/-LPIA-\d+(?:-[A-Z]+)?/i, '')
+    .replace(/-2026$/i, '')
+    .trim();
+}
+
+
+/* =========================================================
+   ESCAPAR HTML
+   ========================================================= */
 
 function escapeHtml(value) {
 
@@ -328,13 +680,12 @@ function escapeHtml(value) {
 
     }[character])
   );
-
 }
 
 
-// =====================================================
-// ESTADO
-// =====================================================
+/* =========================================================
+   ESTADO
+   ========================================================= */
 
 function setStatus(
   message,
@@ -360,9 +711,9 @@ function setStatus(
 }
 
 
-// =====================================================
-// CARGAR LISTAS
-// =====================================================
+/* =========================================================
+   CARGAR LISTAS
+   ========================================================= */
 
 async function loadLists() {
 
@@ -381,11 +732,16 @@ async function loadLists() {
         payload.error ||
         'No se pudieron cargar las listas.'
       );
-
     }
 
 
-    state.lists = payload;
+    /*
+      Normalizamos todos los registros.
+    */
+
+    state.lists =
+      payload.map(normalizeList);
+
 
     renderLists();
 
@@ -399,9 +755,11 @@ async function loadLists() {
 
 
     elements.container.innerHTML =
-      `<div class="empty-state">
-        ${escapeHtml(error.message)}
-      </div>`;
+      `
+        <div class="empty-state">
+          ${escapeHtml(error.message)}
+        </div>
+      `;
 
 
     setStatus(
@@ -409,15 +767,13 @@ async function loadLists() {
       0,
       'error'
     );
-
   }
-
 }
 
 
-// =====================================================
-// COMBINAR PDFs
-// =====================================================
+/* =========================================================
+   COMBINAR PDF
+   ========================================================= */
 
 async function combinePdfs() {
 
@@ -461,29 +817,36 @@ async function combinePdfs() {
 
             urls: state.lists
               .filter(
-                (list) =>
-                  state.selected.has(list.url)
+                list =>
+                  state.selected.has(
+                    list.url
+                  )
               )
               .map(
-                (list) => list.url
+                list => list.url
               )
 
           })
-
         }
       );
 
 
     if (!response.ok) {
 
-      const payload =
-        await response.json();
+      let payload = {};
+
+      try {
+        payload =
+          await response.json();
+      } catch {
+        payload = {};
+      }
+
 
       throw new Error(
         payload.error ||
         'No se pudo generar el PDF.'
       );
-
     }
 
 
@@ -506,7 +869,6 @@ async function combinePdfs() {
       URL.revokeObjectURL(
         state.pdfUrl
       );
-
     }
 
 
@@ -531,8 +893,7 @@ async function combinePdfs() {
       }.`;
 
 
-    elements.result.hidden =
-      false;
+    elements.result.hidden = false;
 
 
   } catch (error) {
@@ -548,19 +909,23 @@ async function combinePdfs() {
 
     elements.combine.disabled =
       false;
-
   }
-
 }
 
 
-// =====================================================
-// SELECCIONAR TODO
-// =====================================================
+/* =========================================================
+   SELECCIONAR TODO
+   ========================================================= */
 
-document
-  .querySelector('#select-all')
-  .addEventListener(
+const selectAll =
+  document.querySelector(
+    '#select-all'
+  );
+
+
+if (selectAll) {
+
+  selectAll.addEventListener(
     'click',
     () => {
 
@@ -570,90 +935,108 @@ document
           state.selected.add(
             list.url
           );
-
         }
       );
 
       updateSelection();
-
     }
+  );
+}
+
+
+/* =========================================================
+   DESELECCIONAR TODO
+   ========================================================= */
+
+const deselectAll =
+  document.querySelector(
+    '#deselect-all'
   );
 
 
-// =====================================================
-// DESELECCIONAR TODO
-// =====================================================
+if (deselectAll) {
 
-document
-  .querySelector('#deselect-all')
-  .addEventListener(
+  deselectAll.addEventListener(
     'click',
     () => {
 
       state.selected.clear();
 
       updateSelection();
-
     }
   );
+}
 
 
-// =====================================================
-// BOTÓN COMBINAR
-// =====================================================
+/* =========================================================
+   BOTÓN COMBINAR
+   ========================================================= */
 
-elements.combine.addEventListener(
-  'click',
-  combinePdfs
-);
+if (elements.combine) {
+
+  elements.combine.addEventListener(
+    'click',
+    combinePdfs
+  );
+}
 
 
-// =====================================================
-// ABRIR PDF
-// =====================================================
+/* =========================================================
+   ABRIR PDF
+   ========================================================= */
 
-elements.open.addEventListener(
-  'click',
-  () => {
+if (elements.open) {
 
-    if (state.pdfUrl) {
+  elements.open.addEventListener(
+    'click',
+    () => {
 
-      window.open(
-        state.pdfUrl,
-        '_blank',
-        'noopener'
-      );
+      if (state.pdfUrl) {
 
+        window.open(
+          state.pdfUrl,
+          '_blank',
+          'noopener'
+        );
+      }
     }
+  );
+}
 
-  }
-);
 
+/* =========================================================
+   IMPRIMIR PDF
+   ========================================================= */
 
-// =====================================================
-// IMPRIMIR PDF
-// =====================================================
+if (elements.print) {
 
-elements.print.addEventListener(
-  'click',
-  () => {
+  elements.print.addEventListener(
+    'click',
+    () => {
 
-    if (state.pdfUrl) {
+      if (state.pdfUrl) {
 
-      window.open(
-        state.pdfUrl,
-        '_blank',
-        'noopener'
-      );
+        const printWindow =
+          window.open(
+            state.pdfUrl,
+            '_blank',
+            'noopener'
+          );
 
+        if (printWindow) {
+
+          printWindow.onload = () => {
+            printWindow.print();
+          };
+        }
+      }
     }
+  );
+}
 
-  }
-);
 
-
-// =====================================================
-// INICIAR
-// =====================================================
+/* =========================================================
+   INICIO
+   ========================================================= */
 
 loadLists();
