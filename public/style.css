@@ -62,3 +62,209 @@ h2 { font-size: clamp(25px, 4vw, 38px); line-height: 1.08; }
 footer { margin-top: 32px; color: #94a09d; font-size: 12px; text-align: center; }
 @keyframes spin { to { transform: rotate(360deg); } }
 @media (max-width: 700px) { .app-shell { width: min(100% - 28px, 560px); padding-top: 20px; } .topbar { padding-bottom: 30px; } .local-badge { display: none; } .intro { display: block; padding-top: 38px; } .selection-summary { margin-top: 22px; } .lists-grid { grid-template-columns: 1fr; } .action-panel, .result-panel { display: block; } .action-panel .button { width: 100%; margin-top: 17px; } .result-actions { margin-top: 19px; } .result-actions .button { flex: 1; padding: 0 10px; } }
+
+/* =========================================================
+   DÍAS
+   ========================================================= */
+
+.day-section {
+  margin-top: 32px;
+  margin-bottom: 28px;
+}
+
+.day-header {
+  margin-bottom: 14px;
+}
+
+.day-selector {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.day-selector input {
+  width: 17px;
+  height: 17px;
+  cursor: pointer;
+}
+
+.day-title {
+  display: block;
+
+  font-size: 28px;
+  line-height: 1.2;
+
+  font-weight: 900;
+
+  text-transform: uppercase;
+
+  letter-spacing: 1px;
+
+  color: #123b3b;
+
+  padding-bottom: 8px;
+
+  border-bottom: 3px solid #0b8f87;
+
+  flex: 1;
+}
+
+
+/* =========================================================
+   CARRERAS
+   ========================================================= */
+
+.career-section {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.career-title {
+  display: block;
+
+  width: 100%;
+
+  box-sizing: border-box;
+
+  padding: 11px 14px;
+
+  margin-bottom: 8px;
+
+  background: #eef5f5;
+
+  border-left: 5px solid #0b8f87;
+
+  border-radius: 6px;
+
+  color: #123b3b;
+
+  font-size: 17px;
+
+  line-height: 1.25;
+
+  font-weight: 900;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.5px;
+}
+
+
+/* =========================================================
+   MATERIAS
+   ========================================================= */
+
+.list-card {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  margin-bottom: 5px;
+}
+
+.list-info {
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  flex: 1;
+
+  min-width: 0;
+
+  cursor: pointer;
+}
+
+.list-name {
+  font-weight: 700;
+
+  line-height: 1.25;
+}
+
+
+/* =========================================================
+   AÑO
+   ========================================================= */
+
+.course-year {
+  display: block;
+
+  margin-top: 4px;
+
+  font-size: 13px;
+
+  line-height: 1.2;
+
+  font-weight: 700;
+
+  color: #555;
+
+  text-transform: uppercase;
+}
+
+
+/* =========================================================
+   VER PDF
+   ========================================================= */
+
+.preview-link {
+  flex-shrink: 0;
+
+  font-size: 12px;
+
+  font-weight: 600;
+
+  white-space: nowrap;
+}
+
+
+/* =========================================================
+   CHECKBOX
+   ========================================================= */
+
+.list-card input[type="checkbox"] {
+  flex-shrink: 0;
+
+  width: 17px;
+
+  height: 17px;
+
+  cursor: pointer;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+  .day-title {
+    font-size: 24px;
+
+    letter-spacing: 0.7px;
+  }
+
+  .career-title {
+    font-size: 15px;
+
+    padding: 10px 11px;
+  }
+
+  .list-name {
+    font-size: 13px;
+  }
+
+  .course-year {
+    font-size: 12px;
+  }
+
+  .preview-link {
+    font-size: 11px;
+  }
+
+}
