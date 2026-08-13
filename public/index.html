@@ -1,64 +1,240 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
+
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#173b52">
-  <title>Impresión de listas</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/style.css">
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="Sistema de selección y combinación de listas de asistencia"
+  >
+
+  <title>Impresión de Listas</title>
+
+  <link
+    rel="stylesheet"
+    href="style.css"
+  >
 </head>
+
+
 <body>
-  <main class="app-shell">
-    <header class="topbar">
-      <div class="brand-mark" aria-hidden="true">▤</div>
-      <div>
-        <p class="eyebrow">CENTRO DE OPERACIONES</p>
-        <h1>IMPRESIÓN DE LISTAS</h1>
+
+  <header class="top-header">
+
+    <div class="header-content">
+
+      <div class="brand">
+
+        <div class="brand-icon">
+          📋
+        </div>
+
+        <div>
+          <h1>Impresión de Listas</h1>
+
+          <p>
+            Seleccione las cátedras que desea imprimir
+          </p>
+        </div>
+
       </div>
-      <div class="local-badge"><span></span> Servidor local</div>
-    </header>
 
-    <section class="intro">
-      <div>
-        <p class="eyebrow accent">DOCUMENTOS DISPONIBLES</p>
-        <h2>Seleccione las listas que desea imprimir</h2>
-        <p class="intro-copy">Combine varias listas en un único PDF, conservando el orden y el formato original.</p>
+    </div>
+
+  </header>
+
+
+  <main class="main-container">
+
+
+    <!-- =========================================
+         PANEL DE CONTROLES
+         ========================================= -->
+
+    <section class="control-panel">
+
+      <div class="control-left">
+
+        <button
+          type="button"
+          id="select-all"
+          class="control-button"
+        >
+          ☑ Seleccionar todo
+        </button>
+
+        <button
+          type="button"
+          id="deselect-all"
+          class="control-button secondary"
+        >
+          ☐ Deseleccionar todo
+        </button>
+
       </div>
-      <div class="selection-summary" aria-live="polite"><strong id="selection-count">0</strong><span>listas seleccionadas</span></div>
-    </section>
 
-    <section class="toolbar" aria-label="Acciones de selección">
-      <button class="button button-light" id="select-all" type="button">Seleccionar todas</button>
-      <button class="button button-quiet" id="deselect-all" type="button">Deseleccionar todas</button>
-    </section>
 
-    <section id="lists-container" class="lists-grid" aria-live="polite" aria-busy="true">
-      <div class="loading-state"><span class="spinner"></span> Cargando listas disponibles...</div>
-    </section>
+      <div class="selection-counter">
 
-    <section class="action-panel">
-      <div class="status-line"><span id="status-icon" class="status-icon">i</span><span id="status-message">Listo para comenzar.</span></div>
-      <div class="progress-track" aria-hidden="true"><div id="progress-bar" class="progress-bar"></div></div>
-      <button class="button button-primary" id="combine-button" type="button"><span aria-hidden="true">▣</span> Generar e imprimir</button>
-    </section>
+        <strong id="selection-count">
+          0
+        </strong>
 
-    <section id="result-panel" class="result-panel" hidden>
-      <div>
-        <p class="eyebrow accent">PROCESO COMPLETADO</p>
-        <h2>PDF generado correctamente</h2>
-        <p id="result-detail">Se combinaron 0 listas.</p>
+        <span>
+          listas seleccionadas
+        </span>
+
       </div>
-      <div class="result-actions">
-        <button class="button button-light" id="open-pdf" type="button">Abrir PDF</button>
-        <button class="button button-primary" id="print-pdf" type="button"><span aria-hidden="true">▣</span> Imprimir</button>
-      </div>
+
     </section>
 
-    <footer>Las descargas se realizan desde el servidor local. Los archivos no se almacenan permanentemente.</footer>
+
+    <!-- =========================================
+         LISTAS
+         ========================================= -->
+
+    <section
+      id="lists-container"
+      class="lists-container"
+      aria-live="polite"
+      aria-busy="true"
+    >
+
+      <div class="loading-state">
+
+        <div class="loading-spinner"></div>
+
+        <span>
+          Cargando listas...
+        </span>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================================
+         BOTÓN COMBINAR
+         ========================================= -->
+
+    <section class="combine-section">
+
+      <button
+        type="button"
+        id="combine-button"
+        class="combine-button"
+      >
+        📄 GENERAR PDF
+      </button>
+
+    </section>
+
+
+    <!-- =========================================
+         ESTADO
+         ========================================= -->
+
+    <section class="status-panel">
+
+      <div
+        id="status-icon"
+        class="status-icon"
+      >
+        i
+      </div>
+
+      <div class="status-content">
+
+        <div
+          id="status-message"
+          class="status-message"
+        >
+          Seleccione las listas que desea combinar.
+        </div>
+
+        <div class="progress-container">
+
+          <div
+            id="progress-bar"
+            class="progress-bar"
+          ></div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================================
+         RESULTADO
+         ========================================= -->
+
+    <section
+      id="result-panel"
+      class="result-panel"
+      hidden
+    >
+
+      <div class="result-icon">
+        ✓
+      </div>
+
+      <div class="result-content">
+
+        <h2>
+          PDF generado correctamente
+        </h2>
+
+        <p id="result-detail">
+          Se combinaron las listas seleccionadas.
+        </p>
+
+        <div class="result-buttons">
+
+          <button
+            type="button"
+            id="open-pdf"
+            class="result-button"
+          >
+            👁 Ver PDF
+          </button>
+
+          <button
+            type="button"
+            id="print-pdf"
+            class="result-button print"
+          >
+            🖨 Imprimir
+          </button>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
   </main>
-  <script src="/app.js" defer></script>
+
+
+  <footer class="footer">
+
+    <p>
+      Sistema de impresión de listas de asistencia
+    </p>
+
+  </footer>
+
+
+  <script src="app.js"></script>
+
 </body>
+
 </html>
